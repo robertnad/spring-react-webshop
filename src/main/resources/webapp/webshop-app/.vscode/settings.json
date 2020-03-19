@@ -1,0 +1,12 @@
+{
+    "editor.tokenColorCustomizations": {
+        "keywords": "#ff4d88",
+        // "functions": "#fee6c0",
+        "functions": "#e6c99c",
+        "types": "#ff6fe0",
+        "variables": "#fee6c0",
+        "numbers": "#7dfdae",
+        "strings": "#efbb35",
+        // "comments": "#6871ec",
+    }
+}

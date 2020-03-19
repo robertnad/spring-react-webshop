@@ -1,0 +1,20 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# dependencies
+/src/main/resources/webapp/webshop-app/node_modules/
+
+# testing
+/src/main/resources/webapp/webshop-app/coverage/
+
+# production
+/src/main/resources/webapp/webshop-app/build/

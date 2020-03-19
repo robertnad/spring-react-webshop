@@ -1,0 +1,23 @@
+PROBLEMS:
+-fix adding same name product = products are unique
+-fix currency state mgmt and api
+-when adding product from frontend it gets UUID type id but when its
+    posted to backend it gets converted to Long type which creates problems
+    when wanting to GET/PUT/DELETE product of certain id
+    (Failed to convert value of type 'java.lang.String' to required type 'long')
+
+
+TO DO:
+-authorization
+-authentication
+-private(admin & client) vs public(guest) routes
+-signin/signup functionality
+-spring security
+-spring model for signed users (customers) that contains customer info
+-add 3rd entity (bridge table between user and product) for order info
+-solve entity relations between customer-order-product tables
+-ShoppingItemPage is redundant?
+
+THOUGHTS:
+Redo everything with all axios/fetch requests in one single products component?
+Would reducers/context be needed in that case?

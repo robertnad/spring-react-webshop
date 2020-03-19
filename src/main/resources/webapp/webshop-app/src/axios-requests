@@ -1,0 +1,58 @@
+import axios from 'axios';
+
+/*---- GET REQUEST -----*/
+    
+useEffect(() => {
+    axios.get("http://localhost:8080/products/findAll")
+        .then((response) => {
+            console.log(response);
+            setProducts(response.data);
+        })
+}, []);
+
+
+/*---- POST REQUEST ----*/
+
+const product = { name, price, discount, manufacturer, description }
+const postProduct = async () => {
+    let response = await axios
+        .post('http://localhost:8080/products', product);
+        if(response.data != null) {
+            console.log(`Product ${product.name} added successfully`);
+        }
+}
+
+
+/*---- PUT REQUEST -----*/
+
+axios
+    .put(`http://localhost:8080/products/${product.id}`)
+    .then(response => {
+        if(response.data != null) {
+            console.log(`Product ${product.name} updated!`);
+            console.log(`http://localhost:8080/products/${product.id}`);                            
+        }
+    })
+
+
+/*--- DELETE REQUEST ---*/
+
+axios
+    .delete(`http://localhost:8080/products/${product.id}`)
+    .then(response => {
+        if(response.data != null) {
+            dispatchProducts({ type:'REMOVE_PRODUCT', id: product.id });
+            console.log(`Product ${product.name} deleted successfully`);
+            console.log(`URL: http://localhost:8080/products/${product.id}`);                            
+        }
+})
+
+
+/* GET CURRENCY REQUEST */
+
+const getCurrency = async (currency) => {
+    let response = await axios
+        .get(`https://api.openrates.io/latest?base=EUR&symbols=${currency}`)
+            console.log(response);
+            console.log(`1 EUR = ${response.data.rates[currency]} ${currency}`);
+}
